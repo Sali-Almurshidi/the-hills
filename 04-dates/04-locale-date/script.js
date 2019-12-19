@@ -8,6 +8,7 @@
     let thisYear = date.getFullYear();
     let thisHour = date.getHours();
     let thisMinutes = date.getMinutes();
+
     document.getElementById("target").innerHTML = todayDay + " " + thisDate + " " + thisMonth  + " " + thisYear + " " +  thisHour + " H " +  thisMinutes;
 })();
 
