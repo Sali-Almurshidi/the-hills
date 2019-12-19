@@ -1,7 +1,7 @@
 function getMonth() {
 
     // your code here
-    let year = document.getElementById('run').value;
+    let year = document.getElementById('year').value;
     let day;
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let this_month = 0;
