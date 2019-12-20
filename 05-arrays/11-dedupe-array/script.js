@@ -19,4 +19,12 @@
 
     // your code here
 
+    let newFruits = [];
+    fruits.forEach(function (element) {
+        if (newFruits[element])
+            console.log(element);
+        else
+            newFruits[element] = true;
+    })
+
 })();
