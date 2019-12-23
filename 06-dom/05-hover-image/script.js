@@ -1,4 +1,4 @@
-function test() {
+(function(){
 
     // your code here
     let newSource = document.getElementsByTagName('img').getAttribute('data-hover');
@@ -12,7 +12,7 @@ function test() {
     function oldImg() {
         imageHere.setAttribute('src', 'oldSource');
     }
-}
+})();
 
 
 
