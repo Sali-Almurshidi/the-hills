@@ -11,7 +11,7 @@
     var cell = [];
     for (i= 0 ; i < 10 ; i ++){
         cell = document.createElement("TR");
-        cell.setAttribute("id", "myTr");
+        cell.setAttribute("id", "myTr"+i);
         document.getElementById("myTable").appendChild(cell);
         cell.innerHTML= "here we go";
     }
