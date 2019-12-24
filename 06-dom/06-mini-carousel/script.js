@@ -1,13 +1,25 @@
 (function() {
 
-    var gallery= [
-        "../../_shared/img/bell.svg",
-        "../../_shared/img/clock.svg",
-        "../../_shared/img/compass.svg",
-        "../../_shared/img/lemon.svg",
-        "../../_shared/img/map.svg",
-    ];
 
-    // your code here
+     var i= 0 ;
+    document.getElementById('next').addEventListener('click' , function () {
+
+        var gallery= [
+            "img/bell.svg",
+            "img/clock.svg",
+            "img/compass.svg",
+            "img/lemon.svg",
+            "img/map.svg",
+        ];
+
+        var thisImage = document.getElementsByTagName("img");
+
+        if(i == gallery.length){
+            i= 0;
+        }
+        thisImage[0].setAttribute("src", gallery[i]);
+        i++;
+
+    });
 
 })();
