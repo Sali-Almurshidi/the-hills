@@ -1,17 +1,20 @@
 (function(){
 
-    // your code here
-    let newSource = document.getElementsByTagName('img').getAttribute('data-hover');
-    let oldSource = document.getElementsByTagName('img').getAttribute('src');
+    document.getElementById("image").addEventListener("mouseover", mouseOver);
+    document.getElementById("image").addEventListener("mouseout", mouseOut);
 
+    var imageTag = document.getElementById("image");
+    var newImg = imageTag.getAttribute("data-hover");
+    var oldImg = imageTag.getAttribute("src");
 
-    function newImg() {
-        imageHere.setAttribute('src', 'newSource');
+    function mouseOver() {
+        imageTag.setAttribute("src", newImg);
     }
 
-    function oldImg() {
-        imageHere.setAttribute('src', 'oldSource');
+    function mouseOut(){
+        imageTag.setAttribute("src", oldImg);
     }
+
 })();
 
 
