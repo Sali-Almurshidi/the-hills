@@ -24,41 +24,30 @@ function InfinityLoop() {
     let text = document.getElementById('target').textContent;
     let targetID = document.getElementById('target');
 
-    let textArray = text.split("");
-   // let textArray = textWithSpace.filter(Boolean);;
-    //alert(textArray);
+    let textWithSpace = text.split("");
+    let textArray = textWithSpace.filter(Boolean);;
+    alert(textArray);
     let arraySpan = [];
-
     target.innerHTML=" ";
 
+    for(i=0 ; i < textArray.length ; i+=5){
 
+        for (j=0 ; j < 5 ; j++){
 
-    for(i=1 ; i < textArray.length ; i++){
+            if (i+j < textArray.length){
+                let moreBig = j * 2 ;
+                let getElement = textArray[i+j];
+                arraySpan[i+j] = document.createElement("SPAN");
+                arraySpan[i+j].setAttribute('style','font-size:2' +moreBig+'px');
+                let newSpan = document.createTextNode(getElement);
+                arraySpan[i+j].appendChild(newSpan);
+                targetID.appendChild(arraySpan[i+j]);
 
-        let charArray = textArray[i].split("");
+            }
 
-        for(j=0 ; j< charArray.length ; j++){
+        }// at lest 5 font size
 
-            let test = charArray[j];
-            let test1 = charArray[j+1] ;
-            arraySpan[j] = document.createElement("SPAN");
-            arraySpan[j].setAttribute('style','font-size:20px');
-            let t = document.createTextNode(test);
-            arraySpan[j].appendChild(t);
-            targetID.appendChild(arraySpan[j]);
-
-            if (j+1 != charArray.length) {
-                arraySpan[j+1] = document.createElement("SPAN");
-                arraySpan[j+1].setAttribute('style','font-size:30px');
-                let t1 = document.createTextNode(test1);
-                arraySpan[j+1].appendChild(t1);
-                targetID.appendChild(arraySpan[j+1]);
-            }// to stay in string length
-
-        } // for loop for every char in the string
-
-
-    } // for loop for every string
+    } // for loop for every char
 
 
 })();
