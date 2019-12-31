@@ -8,79 +8,57 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+let timeOut ;
+
+
+
+function InfinityLoop() {
+    //arraySpan.length = 0 ;
+
+
+
+}
 
 (function() {
-
-    // your code here
-
+    //timeOut = setInterval(InfinityLoop, 3000);
     let text = document.getElementById('target').textContent;
     let targetID = document.getElementById('target');
+
+    let textArray = text.split("");
+   // let textArray = textWithSpace.filter(Boolean);;
+    //alert(textArray);
+    let arraySpan = [];
+
     target.innerHTML=" ";
-    let textArray = text.split(" ");
-    let resultOdd = [];
-    let resultEven = [];
-    var arraySpan = [];
-    //target.innerHTML=textArray + textArray.length;
-    // for loop for textArray
-    for(i=2 ; i < textArray.length ; i++){
-       // alert(textArray[i]);
-        // if for even
-       // if((i%2) == 0){
-            let test = textArray[i] ;
-        let test1 = textArray[i+1] ;
-            arraySpan[i] = document.createElement("SPAN");
-           arraySpan[i].setAttribute('style','font-size:20px');
-            var t = document.createTextNode(test);
-            arraySpan[i].appendChild(t);
-            targetID.appendChild(arraySpan[i]);
 
 
-        arraySpan[i+1] = document.createElement("SPAN");
-        arraySpan[i+1].setAttribute('style','font-size:30px');
-        var t1 = document.createTextNode(test1);
-        arraySpan[i+1].appendChild(t1);
-        targetID.appendChild(arraySpan[i+1]);
-            //document.body.appendChild(x);
-            //textArray[i].style.fontFamily= "Impact,Charcoal,sans-serif" ;
-            //test.fontsize(7);
-            //test.italics();
-            //textArray[i].fontcolor(green);
-            //target.innerHTML+=test + " " ;
-            //test.style.color = '#888';
-            //resultEven.push(test);
-           // alert(test);
-       // }
-        // if for even
-        //if((i%2) != 0){
-            //let test = textArray[i] ;
-            //arraySpan[i] = document.createElement("SPAN");
-           // arraySpan[i].setAttribute('style','fontSize:20px')
-            //var t = document.createTextNode(test);
-           // arraySpan[i].appendChild(t);
-            //targetID.appendChild(arraySpan[i]);
-            //textArray[i].style.fontFamily= "Impact,Charcoal,sans-serif" ;
-            //textArray[i].style.fontSize= "x-small" ;
-            //test.fontsize(2);
-           // test.style.color = '#ff2a28';
-            //target.innerHTML+=test ;
-            //resultOdd.push(test);
 
-       // }
-    }
-    //let resultLength = resultOdd.length;
-    //if (resultEven.length >= resultOdd.length ){
-      //  resultLength = resultEven.length;
-    //}
-    //for(i=0 ; i < resultLength ; i++){
-       // target.innerHTML+= resultEven[i] + " " + resultOdd[i];
-  //  }
-     function setFont(font) {
-        var size = this.offsetWidth,
-            font_size = size * font;
-        this.style.fontSize = font_size + '%';
-        return this
-    };
+    for(i=1 ; i < textArray.length ; i++){
+
+        let charArray = textArray[i].split("");
+
+        for(j=0 ; j< charArray.length ; j++){
+
+            let test = charArray[j];
+            let test1 = charArray[j+1] ;
+            arraySpan[j] = document.createElement("SPAN");
+            arraySpan[j].setAttribute('style','font-size:20px');
+            let t = document.createTextNode(test);
+            arraySpan[j].appendChild(t);
+            targetID.appendChild(arraySpan[j]);
+
+            if (j+1 != charArray.length) {
+                arraySpan[j+1] = document.createElement("SPAN");
+                arraySpan[j+1].setAttribute('style','font-size:30px');
+                let t1 = document.createTextNode(test1);
+                arraySpan[j+1].appendChild(t1);
+                targetID.appendChild(arraySpan[j+1]);
+            }// to stay in string length
+
+        } // for loop for every char in the string
+
+
+    } // for loop for every string
 
 
 })();
-
