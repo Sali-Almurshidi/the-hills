@@ -4,7 +4,10 @@
     document.getElementById("pass-one").addEventListener("input",function() {
 
         let textlength = document.getElementById('pass-one').value.length;
-        if (textlength <= 10 && textlength >= 2){
+        let textValue = document.getElementById('pass-one').value;
+        var regexNumbers = new RegExp(".*[0-9].*[0-9]");
+
+        if( regexNumbers.test(textValue) && textlength >= 2){
             document.getElementById("validity").innerHTML="ok";
         }else {
             document.getElementById("validity").innerHTML="not ok";
