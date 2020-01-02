@@ -12,5 +12,17 @@
 (function() {
 
     // your code here
+    //var slider = document.getElementById("myRange");
+    //var output = document.getElementById("slider").value;
+    //var maxValue = document.getElementById("slider").max;
+    //var minValue = document.getElementById("slider").min;
+    //output.innerHTML = slider.value;
+
+    document.getElementById("slider").addEventListener("click" , function () {
+
+        var valueSlider = document.getElementById("slider").value;
+        document.getElementById("target").innerHTML = valueSlider;
+
+    });
 
 })();
