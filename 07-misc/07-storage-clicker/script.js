@@ -10,7 +10,14 @@
 // You will have time to focus on it later.
 
 (function() {
-
+    let count = 0 ;
     // your code here
+    document.getElementById("increment").addEventListener('click' , function () {
+        // put result is the key name
+        // and the count is the value with ++
+        localStorage.setItem("result",count++);
+        // result is the key call it to get the value
+        document.getElementById("target").innerHTML = localStorage.getItem("result");
+    });
 
 })();
