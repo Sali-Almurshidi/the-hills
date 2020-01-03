@@ -21,7 +21,7 @@
     document.getElementById("slider").addEventListener("click" , function () {
 
         var valueSlider = document.getElementById("slider").value;
-        document.getElementById("target").innerHTML = valueSlider;
+        document.getElementById("target").innerHTML = "0" + valueSlider;
 
     });
 
