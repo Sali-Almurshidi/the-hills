@@ -11,4 +11,31 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", function () {
+        // use fetch and this is the URL
+        fetch('http://localhost:8083/api.json')
+            .then(response => {
+                return response.json()
+            })
+            .then(function (data) {
+                // Work with JSON data here
+                // heroes name the array in api.json
+                let names = data.heroes;
+                // for each loop to print the names
+                names.forEach(function (element){
+                    console.log(element.name);
+                })
+            })
+            .catch(err => {
+                // Do something for an error here
+                console.log("error")
+            })
+    });
+
+
 })();
+
+
+
+
+
