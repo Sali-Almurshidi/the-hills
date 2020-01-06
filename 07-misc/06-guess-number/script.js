@@ -11,17 +11,22 @@
 
 (function() {
     let randomNumber = Math.floor(Math.random()* 100 +1);
+
     console.log(randomNumber);
+    let times = 0 ;
     // your code here
     document.getElementById("idButton").addEventListener("click",function () {
         let gussNumber = document.getElementById("idGuessNumber").value;
         console.log(gussNumber);
         if(gussNumber == randomNumber){
-            document.getElementById("idResult").innerHTML = "you get it";
+            document.getElementById("idResult").innerHTML = "you get it " + times;
         }else if(gussNumber < randomNumber){
-            document.getElementById("idResult").innerHTML = "hiiiiiiigher";
+            document.getElementById("idResult").innerHTML = "hiiiiiigher";
+            times++;
+
         }else if(gussNumber > randomNumber){
             document.getElementById("idResult").innerHTML = "loooooower";
+            times++;
         }
     });
 
