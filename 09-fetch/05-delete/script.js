@@ -1,14 +1,28 @@
-/* becode/javascript
- *
- * /09-fetch/05-delete/script.js - 11.5: supprimer un élément
- *
- * coded by leny@BeCode
- * started at 12/05/2019
- */
+let elementsData ;
 
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
+fetch("/api.json").then(response => {
+    return response.json();
+}).then(function (data) {
+    elementsData = data.heroes;
+}).catch(err => {
+    console.log("Error");
+})
 
-(() => {
-    // your code here
-})();
+document.getElementById("run").addEventListener("click", function () {
+    let elementID = document.getElementById("hero-id").value;
+    console.log(elementID +"this id");
+    // function to delete the function
+    deleteElement(elementID);
+
+}); // delete events listener to get the input elements
+
+function  deleteElement(elementID) {
+    // before delete the element
+    console.log(elementsData);
+    let newElements = elementsData.filter(function (element) {
+        // if id != the enter id so add this element yo the new array
+        return element.id != parseInt(elementID);
+    })
+    // after delete the element
+    console.log(newElements);
+}
