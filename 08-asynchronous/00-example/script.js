@@ -10,7 +10,7 @@
     const setupIntervalMessage = (label, delay) => {
         let count = 0;
 
-        return setInterval(() => console.log(`${label}:`, ++count), delay);
+        return setInterval(() => console.log(`${label}: `, ++count), delay);
     };
 
     let intervals = [];
