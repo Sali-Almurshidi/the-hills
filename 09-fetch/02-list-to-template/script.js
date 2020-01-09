@@ -10,7 +10,7 @@
 // You will have time to focus on it later.
 
 // an object of the data in the json
-let dataNames;
+let dataNames = [];
 // the template id
 let temp = document.getElementsByTagName("template")[0];
 
@@ -20,11 +20,16 @@ fetch('/api.json').then(response => {
 })
     .then(function (data) {
         dataNames = data.heroes;
+        getArray(dataNames);
     })
     .catch(err => {
         console.log("error");
     })
-
+function getArray(dataNames){
+    console.log(dataNames);
+    console.log(dataNames[1].name);
+}
+//console.log(dataNames[1].name);
 // add event listener to the button
 document.getElementById("run").addEventListener("click", function () {
     // test the array we can get it
@@ -38,7 +43,7 @@ document.getElementById("run").addEventListener("click", function () {
         clonData.querySelector(".alter-ego").innerHTML = element.alterEgo;
         // add clonData in the target id to appearance there
         document.getElementById("target").appendChild(clonData);
-    })
+    });
 
 });
 
